@@ -76,11 +76,12 @@ export default function LotteryEntrace() {
 
     return (
         <div>
-            <h2>Smart Contracts Lottery</h2>
+            <h2 className="py-4 px-4 font-bold text-3xl">Smart Contracts Lottery</h2>
             {raffleAddress ? (
                 <div>
                     <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
                     <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
                         onClick={async function () {
                             await enterRaffle({
                                 onSuccess: handleSuccess,
@@ -94,7 +95,7 @@ export default function LotteryEntrace() {
                     <div>Recent winner: {recentWin}</div>
                 </div>
             ) : (
-                <div>No raffle address</div>
+                <div>No raffle address yet</div>
             )}
         </div>
     );
